@@ -7,14 +7,10 @@ Após a finalização exibir em tela a mensagem no padrão exigido.
 
 Observação:
 
-* Entrada: "A ModalGR está criando soluções incríveis."
-* Saída: Quantidade de palavras: 6
-* Considere como separadores de palavras apenas os espaços em branco.
+• Entrada: "A ModalGR está criando soluções incríveis."
+• Saída: Quantidade de palavras: 6
+• Considere como separadores de palavras apenas os espaços em branco.
 */
-
-// Solution: 
-
-// Get the elements
 
 //Com a constante readline, podemos ler dados de uma stream de dados.
 const readline = require("readline");
@@ -26,7 +22,13 @@ const rl = readline.createInterface({
 });
 
 function countWords(phrase){
-    return `Quantidade de palavras: ${phrase.split(" ").length}`;
+
+    // trim() remove os espaços em branco no início e no final de uma string
+    // split() divide uma string em um array de substrings
+    // \s+ é uma expressão que corresponde a um ou mais espaços em branco
+    const words = phrase.trim().split(/\s+/);
+    // Se a primeira palavra for vazia, retorna 0, senão retorna o tamanho do array
+    return words[0] === "" ? "Quantidade de palavras: 0" : `Quantidade de palavras: ${words.length}`;
 }
 
 rl.question("Digite uma frase: ", phrase =>{
