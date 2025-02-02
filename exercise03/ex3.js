@@ -12,10 +12,6 @@ Observação:
 * Considere como separadores de palavras apenas os espaços em branco.
 */
 
-// Solution: 
-
-// Get the elements
-
 //Com a constante readline, podemos ler dados de uma stream de dados.
 const readline = require("readline");
 
